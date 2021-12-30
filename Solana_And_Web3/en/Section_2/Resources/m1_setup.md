@@ -24,6 +24,20 @@ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 
 You will be prompted with multiple options to install. We are going to go with default entering 1 and then enter!
 
+#### If you run into an error, try the following steps: (from https://stackoverflow.com/questions/45899815/could-not-write-to-bash-profile-when-installing-rust-on-macos-sierra)
+Run the following on terminal instead:
+'''bash
+curl https://sh.rustup.rs -sSf | sh -s -- --no-modify-path 
+'''
+
+you'll have to manually update .bash_profile to include it in your path:
+
+'''bash
+sudo vim ~/.bash_profile
+source ~/.cargo/env
+'''
+
+
 Once you're done, go ahead and restart your terminal and then verfiy it was installed by entering:
 
 ```bash
